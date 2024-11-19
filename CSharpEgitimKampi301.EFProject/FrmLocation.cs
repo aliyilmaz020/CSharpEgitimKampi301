@@ -76,5 +76,11 @@ namespace CSharpEgitimKampi301.EFProject
             db.SaveChanges();
             MessageBox.Show("Güncelleme İşlemi Başarılı");
         }
+
+        private void btnGetById_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtId.Text);
+            dataGridView1.DataSource = db.Location.Where(x => x.LocationId == id ).ToList();  
+        }
     }
 }
