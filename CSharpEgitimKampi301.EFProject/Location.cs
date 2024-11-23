@@ -18,7 +18,7 @@ namespace CSharpEgitimKampi301.EFProject
         public string City { get; set; }
         public string Country { get; set; }
         public Nullable<byte> Capacity { get; set; }
-        public Nullable<decimal> Prize { get; set; }
+        public Nullable<decimal> Price { get; set; }
         public string DayNight { get; set; }
         public Nullable<int> GuideId { get; set; }
     

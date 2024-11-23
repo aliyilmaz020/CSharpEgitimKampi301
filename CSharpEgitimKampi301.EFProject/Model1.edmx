@@ -38,7 +38,7 @@
           <Property Name="City" Type="nvarchar" MaxLength="50" />
           <Property Name="Country" Type="nvarchar" MaxLength="50" />
           <Property Name="Capacity" Type="tinyint" />
-          <Property Name="Prize" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
           <Property Name="DayNight" Type="nvarchar" MaxLength="50" />
           <Property Name="GuideId" Type="int" />
         </EntityType>
@@ -79,6 +79,14 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EgitimKampiEfTravelDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerId" />
@@ -105,7 +113,7 @@
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Capacity" Type="Byte" />
-          <Property Name="Prize" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="DayNight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GuideId" Type="Int32" />
           <NavigationProperty Name="Guide" Relationship="Self.FK_Location_Guide" FromRole="Location" ToRole="Guide" />
@@ -133,6 +141,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EgitimKampiEfTravelDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin" EntityType="Self.Admin" />
           <EntitySet Name="Customer" EntityType="Self.Customer" />
           <EntitySet Name="Guide" EntityType="Self.Guide" />
           <EntitySet Name="Location" EntityType="Self.Location" />
@@ -141,29 +150,29 @@
             <End Role="Guide" EntitySet="Guide" />
             <End Role="Location" EntitySet="Location" />
           </AssociationSet>
-          <EntitySet Name="Admin" EntityType="EgitimKampiEfTravelDbModel.Admin" />
         </EntityContainer>
-        <EntityType Name="Admin">
-          <Key>
-            <PropertyRef Name="AdminId" />
-          </Key>
-          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EgitimKampiEfTravelDbModelStoreContainer" CdmEntityContainer="EgitimKampiEfTravelDbEntities">
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="EgitimKampiEfTravelDbModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Customer">
             <EntityTypeMapping TypeName="EgitimKampiEfTravelDbModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
-                <ScalarProperty Name="CustomerBalance" ColumnName="CustomerBalance" />
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
                 <ScalarProperty Name="CustomerSurname" ColumnName="CustomerSurname" />
+                <ScalarProperty Name="CustomerBalance" ColumnName="CustomerBalance" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -183,7 +192,7 @@
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="Country" ColumnName="Country" />
                 <ScalarProperty Name="Capacity" ColumnName="Capacity" />
-                <ScalarProperty Name="Prize" ColumnName="Prize" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="DayNight" ColumnName="DayNight" />
                 <ScalarProperty Name="GuideId" ColumnName="GuideId" />
               </MappingFragment>
@@ -197,15 +206,6 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Admin">
-            <EntityTypeMapping TypeName="EgitimKampiEfTravelDbModel.Admin">
-              <MappingFragment StoreEntitySet="Admin">
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
