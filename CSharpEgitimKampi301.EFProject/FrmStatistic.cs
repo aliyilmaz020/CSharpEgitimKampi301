@@ -45,7 +45,7 @@ namespace CSharpEgitimKampi301.EFProject
 
             Design();
         }
-        private void Design() // Tasarım
+        private void Design() // Tasarım (ChatGpt sağolsun :) )
         {
             // Formda bulunan panelleri gez
             foreach (Panel panel in this.Controls.OfType<Panel>())
