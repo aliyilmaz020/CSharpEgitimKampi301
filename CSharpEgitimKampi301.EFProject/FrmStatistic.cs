@@ -21,7 +21,7 @@ namespace CSharpEgitimKampi301.EFProject
         {
             lblLocationCount.Text = db.Location.Count().ToString();
             lblSumCapacity.Text = db.Location.Sum(x => x.Capacity).ToString();
-            lblGuideCount.Text = db.Location.Count().ToString();
+            lblGuideCount.Text = db.Guide.Count().ToString();
             lblAvgCapacity.Text = db.Location.Average(x => x.Capacity)?.ToString("0.00");
             lblAvgLocationPrice.Text = db.Location.Average(x => x.Price)?.ToString("0.00") + " ₺";
 
