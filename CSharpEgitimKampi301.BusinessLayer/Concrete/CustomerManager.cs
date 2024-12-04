@@ -24,7 +24,16 @@ namespace CSharpEgitimKampi301.BusinessLayer.Concrete
         }
         public void TInsert(Customer entity)
         {
-            
+            //Validation Kuralı
+            if (entity.CustomerName != "" && entity.CustomerName.Length >= 3 &&
+                entity.CustomerCity != null && entity.CustomerSurname != "" && entity.CustomerName.Length <= 30)
+            {
+                //ekleme işlemi yap
+            }
+            else
+            {
+                //hata mesajı ver
+            }
         }
         public void TUpdate(Customer entity)
         {
