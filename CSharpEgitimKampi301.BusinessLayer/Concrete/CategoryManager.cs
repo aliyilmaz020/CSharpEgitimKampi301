@@ -11,6 +11,7 @@ namespace CSharpEgitimKampi301.BusinessLayer.Concrete
 {
     public class CategoryManager : ICategoryService
     {
+        //Dependency Injection
         private readonly ICategoryDal _categoryDal; //field
 
         public CategoryManager(ICategoryDal categoryDal)
