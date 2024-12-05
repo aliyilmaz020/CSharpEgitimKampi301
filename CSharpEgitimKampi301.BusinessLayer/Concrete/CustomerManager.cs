@@ -43,7 +43,8 @@ namespace CSharpEgitimKampi301.BusinessLayer.Concrete
         {
             //Validation Kuralı
             if (entity.CustomerName != "" && entity.CustomerName.Length >= 3 &&
-                entity.CustomerCity != null && entity.CustomerSurname != "" && entity.CustomerName.Length <= 30)
+                entity.CustomerCity != null && entity.CustomerSurname != "" 
+                && entity.CustomerName.Length <= 30)
             {
                 //ekleme işlemi yap
                 _customerDal.Insert(entity);
