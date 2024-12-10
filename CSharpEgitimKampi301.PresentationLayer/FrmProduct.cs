@@ -16,5 +16,10 @@ namespace CSharpEgitimKampi301.PresentationLayer
         {
             InitializeComponent();
         }
+
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            var productsValues = 
+        }
     }
 }
