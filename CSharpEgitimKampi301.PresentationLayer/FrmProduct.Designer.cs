@@ -110,7 +110,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(523, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(901, 426);
             this.dataGridView1.TabIndex = 16;
             // 
             // btnList
@@ -220,7 +220,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(857, 502);
+            this.ClientSize = new System.Drawing.Size(1235, 502);
             this.Controls.Add(this.btnList2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
