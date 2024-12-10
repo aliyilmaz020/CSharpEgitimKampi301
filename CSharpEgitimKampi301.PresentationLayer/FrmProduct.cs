@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CSharpEgitimKampi301.BusinessLayer.Concrete;
+using CSharpEgitimKampi301.DataAccessLayer.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +18,17 @@ namespace CSharpEgitimKampi301.PresentationLayer
         {
             InitializeComponent();
         }
-
+        ProductManager productManager = new ProductManager(new EfProductDal());
         private void btnList_Click(object sender, EventArgs e)
         {
-            var productsValues = 
+            var productsValues = productManager.TGetAll();
+            dataGridView1.DataSource = productsValues;
+        }
+
+        private void btnList2_Click(object sender, EventArgs e)
+        {
+            var values = productManager.TGetProductsWithCategory();
+            dataGridView1.DataSource = values;
         }
     }
 }

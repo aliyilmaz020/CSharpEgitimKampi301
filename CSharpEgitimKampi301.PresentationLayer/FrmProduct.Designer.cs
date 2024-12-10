@@ -46,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnList2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +104,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(322, 20);
             this.dataGridView1.Name = "dataGridView1";
@@ -115,7 +117,7 @@
             // 
             this.btnList.Location = new System.Drawing.Point(121, 252);
             this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(179, 34);
+            this.btnList.Size = new System.Drawing.Size(76, 34);
             this.btnList.TabIndex = 15;
             this.btnList.Text = "Listele";
             this.btnList.UseVisualStyleBackColor = true;
@@ -203,12 +205,23 @@
             this.label6.TabIndex = 32;
             this.label6.Text = "Ürün Fiyat:";
             // 
+            // btnList2
+            // 
+            this.btnList2.Location = new System.Drawing.Point(213, 252);
+            this.btnList2.Name = "btnList2";
+            this.btnList2.Size = new System.Drawing.Size(86, 34);
+            this.btnList2.TabIndex = 34;
+            this.btnList2.Text = "Listele2";
+            this.btnList2.UseVisualStyleBackColor = true;
+            this.btnList2.Click += new System.EventHandler(this.btnList2_Click);
+            // 
             // FrmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(857, 502);
+            this.Controls.Add(this.btnList2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -255,5 +268,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnList2;
     }
 }
